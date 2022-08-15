@@ -29,6 +29,12 @@ bool win(const char brd[9], const Sides side) {
 	return false;
 }
 
+bool winning(const char brd[9]) {
+	if (win(brd, Sides::X_SIDE) || win(brd, Sides::O_SIDE)) 
+		return true;
+	return false;
+}
+
 void put_sign(char brd[9], int index, char sign) {
 	if (is_index_valid(index)) {
 		brd[index] = sign;

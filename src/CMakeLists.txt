@@ -4,7 +4,7 @@ project (TicTacToe VERSION 1.0 LANGUAGES CXX)
 add_executable(${PROJECT_NAME} main.cpp)
 
 add_library(LIBRARIES
-	board.cpp game.cpp input.cpp
+	board.cpp game.cpp input.cpp minimax.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} LIBRARIES)
