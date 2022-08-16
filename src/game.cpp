@@ -1,7 +1,13 @@
 #include "game.h"
 
 game::game() {
-	players_[1].is_computer = true;
+	players_[1].is_computer = get_bool("Do you wish to play against computer?");
+	players_[0].name = get_entry("Enter Player 1's name");
+	if (players_[1].is_computer) {
+		players_[1].name = "Computer";
+	} else {
+		players_[1].name = get_entry("Enter Player 2's name");
+	}
 }
 
 void game::make_move(int index) {
@@ -27,8 +33,12 @@ void game::undo_and_switch() {
 
 void game::loop() {
 	while (!is_board_full(board_)) {
+		std::cout << *this << std::endl;
+		std::cout << players_[turn].name << "'s turn (" << 
+		   signs[turn] << ")" << std::endl;
+
 		if (!players_[turn].is_computer) {
-			int index = get_int("Enter your next move [1-9]");
+			int index = get_int("Enter your next move [1-9]") - 1;
 			if (!is_cell_empty(board_, index)) {
 				std::cout << "Invalid input: that spot is already full." << std::endl;
 				continue;
@@ -46,7 +56,6 @@ void game::loop() {
 			std::cout << players_[1].name << " won!" << std::endl;
 			break;
 		}
-		std::cout << *this;
 	}
 }
 

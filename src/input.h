@@ -6,5 +6,6 @@
 
 std::string get_entry(const std::string& prompt);
 int get_int(const std::string& prompt);
+bool get_bool(const std::string& prompt);
 
 #endif

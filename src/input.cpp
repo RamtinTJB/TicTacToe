@@ -29,3 +29,12 @@ int get_int(const std::string& prompt) {
 		}
 	}
 }
+
+bool get_bool(const std::string& prompt) {
+	std::string str;
+	while (1) {
+		str = get_entry(prompt + " (y/n)");
+		if (str == "y" || str == "Y") return true;
+		if (str == "n" || str == "N") return false;	
+	}
+}
