@@ -11,3 +11,23 @@ The `minimax` function iterates over all the possible moves and recursively call
 ```cpp
 int minimax(game g, int depth, bool is_maximizer, const Sides& side, int& best_move);
 ```
+
+## Build and Run
+This program uses `C++17` and `CMake 3.12`. To build and run:
+
+```
+git clone https://github.com/ramtintjb/tictactoe
+cd tictactoe
+cmake -B build
+cd build
+make
+src/TicTacToe
+```
+
+## License
+
+<img align="right" src="https://opensource.org/trademarks/opensource/OSI-Approved-License-100X137.png">
+
+The project is licensed under the [MIT License](https://opensource.org/licenses/MIT):
+
+Copyright &copy; 2022 Ramtin Tajbakhsh
