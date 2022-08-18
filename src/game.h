@@ -35,6 +35,7 @@ class game {
 
 		char* get_board() const { return board_; }
 
+		// returns a vector of all the available moves for the current position
 		std::vector<int> get_all_empty_slots() const;
 };
 
