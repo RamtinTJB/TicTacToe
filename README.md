@@ -26,7 +26,7 @@ src/TicTacToe
 
 ## License
 
-<img align="right" src="https://opensource.org/trademarks/opensource/OSI-Approved-License-100X137.png">
+<img align="right" src="https://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
 
 The project is licensed under the [MIT License](https://opensource.org/licenses/MIT):
 
