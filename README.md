@@ -7,7 +7,7 @@ Minimax is a recursive algorithm used in decision making to find the best move f
 int score(char brd[9], const Sides& side);
 ```
 
-The `minimax` function iterates over all the possible moves, calls the `score` function on the resulting game state, and recursively calls itself for every possible move. After collecting all the scores for all the moves, it selects the best one. The computer is the maximizer so it will choose the move the highest positive score, and the player is the minimizer so it will choose the move with the largest negative score. at every stage the chosen move is stored in `best_move` and after the function call is over, the value of `best_move` reflects the best move for the computer at the current state of the TicTacToe game.
+The `minimax` function iterates over all the possible moves, calls the `score` function on the resulting game state, and recursively calls itself for every possible move. After collecting all the scores for all the moves, it selects the best one. The computer is the maximizer so it will choose the move with the highest positive score, and the player is the minimizer so it will choose the move with the largest negative score. at every stage the chosen move is stored in `best_move` and after the function call is over, the value of `best_move` reflects the best move for the computer at the current state of the TicTacToe game.
 ```cpp
 int minimax(game g, int depth, bool is_maximizer, const Sides& side, int& best_move);
 ```
