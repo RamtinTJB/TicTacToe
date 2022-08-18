@@ -33,12 +33,11 @@ void game::undo_and_switch() {
 
 void game::loop() {
 	while (!is_board_full(board_)) {
-		std::cout << *this << std::endl;
 		std::cout << players_[turn].name << "'s turn (" << 
 		   signs[turn] << ")" << std::endl;
 
 		if (!players_[turn].is_computer) {
-			int index = get_int("Enter your next move [1-9]") - 1;
+			int index = get_int_range("Enter your next move [1-9]", 1, 9) -1;
 			if (!is_cell_empty(board_, index)) {
 				std::cout << "Invalid input: that spot is already full." << std::endl;
 				continue;
@@ -49,11 +48,15 @@ void game::loop() {
 			minimax(*this, 0, true, Sides::O_SIDE, best_move_index);
 			move_and_switch(best_move_index);
 		}
+		std::cout << *this << std::endl;
 		if (win(board_, Sides::X_SIDE)) {
 			std::cout << players_[0].name << " won!" << std::endl;
 			break;
 		} else if (win(board_, Sides::O_SIDE)) {
 			std::cout << players_[1].name << " won!" << std::endl;
+			break;
+		} else if (is_board_full(board_)) {
+			std::cout << "The game is a draw!" << std::endl;
 			break;
 		}
 	}

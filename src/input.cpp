@@ -30,6 +30,15 @@ int get_int(const std::string& prompt) {
 	}
 }
 
+int get_int_range(const std::string& prompt, int begin, int end) {
+	while (1) {
+		int input = get_int(prompt);
+		if (input >= begin && input <= end) {
+			return input;
+		}
+	}
+}
+
 bool get_bool(const std::string& prompt) {
 	std::string str;
 	while (1) {
