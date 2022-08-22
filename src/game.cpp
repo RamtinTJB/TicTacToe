@@ -1,5 +1,12 @@
 #include "game.h"
 
+namespace {
+	void print_help() {
+		std::cout << "Valid indices:" << std::endl;
+		std::cout << "1 2 3\n4 5 6\n7 8 9\n";
+	}
+}
+
 game::game() {
 	players_[1].is_computer = get_bool("Do you wish to play against computer?");
 	players_[0].name = get_entry("Enter Player 1's name");
@@ -8,6 +15,8 @@ game::game() {
 	} else {
 		players_[1].name = get_entry("Enter Player 2's name");
 	}
+	print_help();
+	std::cout << std::endl;
 }
 
 void game::make_move(int index) {
